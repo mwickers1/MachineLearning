@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564577371162.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2023225636",
+    "id" : "522A9FBF",
+    "lastKnownWriteTime" : 1564572862,
+    "last_content_update" : 1564572862,
+    "path" : "C:/Users/melissa.wickers/OneDrive - Next Tier Concepts, Inc/Intro to Machine Learning/Week 3/week3_R.Rmd",
+    "project_path" : "week3_R.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "98,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

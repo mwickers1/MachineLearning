@@ -1,0 +1,111 @@
+---
+title: "week3_R"
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
+---
+
+We'll use the [magick](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) R package to conduct some image processing, as well as the keras.
+
+
+```{r}
+library(magick)
+library(keras)
+```
+```{r}
+coinFiles <- list.files("regression")
+```
+
+
+```{r}
+coin <- image_read(paste0('regression/', coinFiles[5010]))
+coin
+```
+
+```{r}
+image_rotate(coin, 45)
+```
+
+```{r}
+image_flip(coin)
+```
+
+```{r}
+image_resize(coin, "160x120")
+```
+
+Let's load and resize all of the images.
+
+We'll define a function that loads, resizes, and flattens and image. 
+
+```{r}
+loadImg <- function(path) {
+  coin <- image_read(paste0('regression/', path))
+  coinResized <- image_resize(coin, "160x120")
+  
+  # Extract the raw bitmap matrix with pixel values with `image_data`.
+  pix <- image_data(coinResized)
+
+  # Convert it to an array.
+  pix_arr <- as.integer(pix)
+
+  # Flatten the array into a single dimension.
+  array_reshape(pix_arr, 57600)
+}
+```
+
+Apply the function to each coin image.
+
+```{r}
+coinList <- lapply(coinFiles, loadImg)
+length(coinList)
+```
+
+Convert the list of arrays into a single array.
+
+```{r}
+coins <- array(unlist(coinList), dim=c(6028, 57600))
+dim(coins)
+```
+
+Split the dataset into training and test sets. 
+
+```{r}
+coinValues <- unlist(lapply(coinFiles, function (f) as.integer(unlist(strsplit(f,"_"))[1]))) 
+unique(coinValues)
+```
+
+```{r}
+nTrain <- floor(0.90 * nrow(coins))
+trainIndexes <- sample(1:nrow(coins), size = nTrain)
+X_train <- coins[trainIndexes,]
+Y_train <- coinValues[trainIndexes]
+X_test <- coins[-trainIndexes,]
+Y_test <- coinValues[-trainIndexes]
+```
+
+Let's mean-center and standardize the training dataset.
+
+```{r}
+X_train_cen <- scale(X_train, scale=FALSE)
+X_train_std <- scale(X_train)
+```
+
+For the test set:
+
+```{r}
+tr_means <- colMeans(X_train)
+X_test_cen <- sweep(X_test,2,tr_means,FUN="-")
+```
+
+Finally, convert it into a numpy array for keras use.
+
+```{r}
+X_train_cen_keras <- keras_array(X_train_cen)
+class(X_train_cen_keras)
+```
+
+
+

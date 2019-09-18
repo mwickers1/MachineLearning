@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564577352692.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4223065206",
+    "id" : "AE8183A1",
+    "lastKnownWriteTime" : 1564586292,
+    "last_content_update" : 1564586292348,
+    "path" : "C:/Users/melissa.wickers/OneDrive - Next Tier Concepts, Inc/Intro to Machine Learning/Week 3/classification_coins.R",
+    "project_path" : "classification_coins.R",
+    "properties" : {
+        "cursorPosition" : "64,33",
+        "scrollLine" : "55"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

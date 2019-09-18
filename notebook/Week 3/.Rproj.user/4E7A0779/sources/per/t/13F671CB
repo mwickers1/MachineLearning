@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564578380008.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "102833815",
+    "id" : "13F671CB",
+    "lastKnownWriteTime" : 1564577255,
+    "last_content_update" : 1564577255,
+    "path" : "C:/Users/melissa.wickers/OneDrive - Next Tier Concepts, Inc/Intro to Machine Learning/Week 3/Nueral_network.R",
+    "project_path" : "Nueral_network.R",
+    "properties" : {
+        "cursorPosition" : "23,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
